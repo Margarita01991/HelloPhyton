@@ -151,7 +151,7 @@
 # for i in 'qwe - rt y':
 #     print(i)
 
-text = 'съешь еще этих мягких французских булок'
+# text = 'съешь еще этих мягких французских булок'
 # print(len(text)) # 39
 # print('от' in  text) # True
 # print(text.isdigit()) # False
@@ -177,3 +177,47 @@ text = 'съешь еще этих мягких французских було�
 # print(text[::5])            # каждый пятый символ "с эмхнку"
 # text = text[2:9] + ' ' + text[-4] + ' ' + text[:2] # ешь еще у съ
 # print(text)
+
+# numbers = [1, 2, 3, 4, 5]
+# print(numbers)                # [1, 2, 3, 4, 5]
+# ran = range (1, 6)
+# print(type(ran))
+# numbers = list(ran)           # <class 'range'> - это приведение типа 'range' к типу 'list'
+# print(type(numbers))          # <class 'list'>
+# numbers[0] = 10
+# print(len(numbers))           # 5
+# print(f'{len(numbers)} len')  # 5
+# print(numbers)                # [10, 2, 3, 4, 5]
+# for i in numbers:
+#     i *=2
+#     print(i)                  # 20 4 6 8 10
+# print(numbers)                # [10, 2, 3, 4, 5]
+
+# colors = ['red', 'green', 'blue']
+# # for e in colors:
+# #     print(e)                  # red green blue
+# for e in colors:
+#     print(e * 2)                # redred greengreen blueblue
+# colors.append('gray')
+# print(colors)
+# del colors[0]
+# # colors.remove('gray')
+# print(colors)
+# ключевое слово def, имя f, аргумент(x)
+def f(x):
+    if x ==1:
+        return 'Целое'
+    elif x == 2.3:
+        return 23
+    else:
+        return
+arg = 1
+print(f(arg))        # Целое
+print(type(f(arg)))  # <class 'str'>
+arg = 2.3
+print(f(arg))        # 23
+print(type(f(arg)))  #<class 'int'>
+arg = 2
+print(f(arg))        # None
+print(type(f(arg)))  # <class 'NoneType'>
+
