@@ -11,6 +11,12 @@
 # cor = int(input()) 
 # print(a,b,c)
 # print(c[cor])
-
-N = int(input('Введите число: '))
-print(N)
+# Принимает на вход число и выдает последовательность из N членов
+N = int(input('Введите число N: '))
+P = [-i * -3 for i in range(N)]
+print(P)
+# Каждый следующий член прогрессии получаем умножением предыдущего на 3n+1
+number = int(input('Введите число: '))
+print(number)
+n = [number*3 + 1 for number in range(8)]
+print(n)
