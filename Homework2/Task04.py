@@ -21,4 +21,4 @@ if first > (len(numbers)) or second > (len(numbers)):
 else:
     for i in range(len(numbers)):
         product = numbers[first -1]*numbers[second - 1]
-    print(f'Product: {numbers[first -1]} * {numbers[second -1]} =', product)
+    print(f'Произведение: {numbers[first -1]} * {numbers[second -1]} =', product)
