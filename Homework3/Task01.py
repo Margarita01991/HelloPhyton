@@ -5,11 +5,11 @@
 from random import randint
 list1 = [randint(-10, 10) for i in range(10)]
 list2 = []
-amount = 0
+sum = 0
 print (list1)
 for i in range(len(list1)):
     if i%2 != 0:
         list2.append(list1[i])
-        amount += list1[i]
+        sum += list1[i]
 print(list2)
-print(amount)
+print(sum)
