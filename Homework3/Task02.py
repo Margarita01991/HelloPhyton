@@ -3,8 +3,8 @@
 # - [2, 3, 4, 5, 6] => [12, 15, 16];
 # - [2, 3, 5, 6] => [12, 15]
 
-from random import randint
-list1 = [randint(0, 10) for i in range(7)]
+import random
+list1 = [random.randint(-10, 10) for i in range(10)]
 print (list1)
 list2 = []
 for i in range((len(list1)+1)//2):

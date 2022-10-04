@@ -2,8 +2,8 @@
 # *Пример:*
 # - [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
 
-from random import randint
-list1 = [randint(-10, 10) for i in range(10)]
+import random
+list1 = [random.randint(-10, 10) for i in range(10)]
 list2 = []
 sum = 0
 print (list1)
