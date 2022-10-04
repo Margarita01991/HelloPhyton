@@ -4,6 +4,12 @@
 # - 3 -> 11
 # - 2 -> 10
 
-n = int(input('Введите число '))
-print(str(bin(n))[2::])
+# n = int(input('Введите число '))
+# print(str(binaryin(n))[2::])
 
+n = int(input('Введите число: '))
+binary = ''
+while n > 0:
+    binary = str(n % 2) + binary
+    n = n//2
+print(binary)
