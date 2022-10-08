@@ -18,7 +18,7 @@ with open('polinom_2.txt','r') as file:
     b = file.readline()
     # list2 = polinom_2.split()
 
-print(f'{a} + {b}')
+print(f'|{a}| + |{b}|')
 sum_polinom = sympy.simplify(a+'+'+b)
 print(str(sum_polinom))
 
