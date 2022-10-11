@@ -12,7 +12,7 @@ def input_candy(name):
     return x
 
 def p_print(name, n, count, balance):
-    print(f"{name}, взял {n}, теперь у него {count}. Осталось на столе {balance} конфет.")
+    print(f"{name}, взял {n}, теперь у него {count}. Осталось {balance} конфет.")
 
 player1 = 'Игрок 1'
 player2 = 'Игрок 2'
