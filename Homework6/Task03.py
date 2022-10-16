@@ -5,10 +5,11 @@
 
 square_numb = lambda x: x**2
 a,b = int(input('Введите число a: ')),int(input('Введите число b: '))
-if a == square_numb(b):
-    print (f'Число {a} является квадратом {b}')
-elif b == square_numb(a):
-     print (f'Число {b} является квадратом {a}')
-else:
-     print ('Числа не является квадратом друг друга')
-
+# if a == square_numb(b):
+#     print (f'Число {a} является квадратом {b}')
+# elif b == square_numb(a):
+#      print (f'Число {b} является квадратом {a}')
+# else:
+#      print ('Числа не является квадратом друг друга')
+x = lambda a,b: a**2 == b or b**2==a
+print(x(a,b))
