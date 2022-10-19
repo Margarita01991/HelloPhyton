@@ -9,6 +9,8 @@ while True:
         contact = model.get_request()
         book = logger.get_book()
         print(model.find_contact(book, contact))
+    elif mode == 3:
+        print(model.print_data())
     elif mode == 0:
         print('Выход')
         break
