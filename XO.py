@@ -13,14 +13,14 @@ def inputPlayerLetter():
 # Разрешение игроку ввести букву, которую он выбирает.
 # Возвращает список, в котором буква игрока — первый элемент, а буква компьютера — второй.
     letter = ''
-    while not (letter == 'Х' or letter == 'О'):
-        print('Вы выбираете Х или О?')
+    while not (letter == 'X' or letter == 'O'):
+        print('Вы выбираете X или O?')
         letter = input().upper()
 # Первым элементом списка является буква игрока, вторым — буква компьютера.
-    if letter == 'Х':
-        return ['Х', 'О']
+    if letter == 'X':
+        return ['X', 'O']
     else:
-        return ['О', 'Х']
+        return ['O', 'X']
 def whoGoesFirst():
 # Случайный выбор игрока, который ходит первым.
     if random.randint(0, 1) == 0:
@@ -48,7 +48,6 @@ def getBoardCopy(board):
     boardCopy = []
     for i in board:
         boardCopy.append(i)
-
     return boardCopy
 
 def isSpaceFree(board, move):
@@ -64,8 +63,8 @@ def getPlayerMove(board):
     return int(move)
 
 def chooseRandomMoveFromList(board, movesList):
-# Возвращает допустимый ход, учитывая список сделанных ходов и список заполненных клеток.
-# Возвращает значение None, если больше нет допустимых ходов.
+# Возвращает допустимый Ход, учитывая список сделанныХ Ходов и список заполненныХ клеток.
+# Возвращает значение None, если больше нет допустимыХ Ходов.
     possibleMoves = []
     for i in movesList:
         if isSpaceFree(board, i):
@@ -78,10 +77,10 @@ def chooseRandomMoveFromList(board, movesList):
 
 def getComputerMove(board, computerLetter):
 # Учитывая заполнение игрового поля и букву компьютера, определяет допустимый ход и возвращает его.
-    if computerLetter == 'Х':
-        playerLetter = 'О'
+    if computerLetter == 'X':
+        playerLetter = 'O'
     else:
-        playerLetter = 'Х'
+        playerLetter = 'X'
 
 # Это алгоритм для ИИ "Крестиков-Ноликов":
 # Сначала проверяем — победим ли мы, сделав следующий ход.
@@ -89,16 +88,16 @@ def getComputerMove(board, computerLetter):
         boardCopy = getBoardCopy(board)
         if isSpaceFree(boardCopy, i):
             makeMove(boardCopy, computerLetter, i)
-        if isWinner(boardCopy, computerLetter):
-            return i
+            if isWinner(boardCopy, computerLetter):
+                return i
 
 # Проверяем — победит ли игрок, сделав следующий ход, и блокируем его.
     for i in range(1, 10):
         boardCopy = getBoardCopy(board)
-    if isSpaceFree(boardCopy, i):
-        makeMove(boardCopy, playerLetter, i)
-        if isWinner(boardCopy, playerLetter):
-            return i
+        if isSpaceFree(boardCopy, i):
+            makeMove(boardCopy, playerLetter, i)
+            if isWinner(boardCopy, playerLetter):
+                return i
  
 # Пробуем занять один из углов, если есть свободные.
     move = chooseRandomMoveFromList(board, [1, 3, 7, 9])
@@ -109,7 +108,7 @@ def getComputerMove(board, computerLetter):
     if isSpaceFree(board, 5):
         return 5
  
-# Делаем ход по одной стороне.
+# Делаем Ход по одной стороне.
     return chooseRandomMoveFromList(board, [2, 4, 6, 8])
  
 def isBoardFull(board):
@@ -126,7 +125,7 @@ while True:
     theBoard = [' '] * 10
     playerLetter, computerLetter = inputPlayerLetter()
     turn = whoGoesFirst()
-    print('' + turn + ' ходит первым.')
+    print('' + turn + ' Ходит первым.')
     gameIsPlaying = True
     while gameIsPlaying:
         if turn == 'Человек':
@@ -147,22 +146,85 @@ while True:
                 else:
                     turn = 'Компьютер'
 
-    else:
-# Ход компьютера.
-        move = getComputerMove(theBoard, computerLetter)
-        makeMove(theBoard, computerLetter, move)
-
-        if isWinner(theBoard, computerLetter):
-            drawBoard(theBoard)
-            print('Компьютер победил! Вы проиграли.')
-            gameIsPlaying = False
         else:
-            if isBoardFull(theBoard):
+# Ход компьютера.
+            move = getComputerMove(theBoard, computerLetter)
+            makeMove(theBoard, computerLetter, move)
+
+            if isWinner(theBoard, computerLetter):
                 drawBoard(theBoard)
-                print('Ничья!')
-                break
+                print('Компьютер победил! Вы проиграли.')
+                gameIsPlaying = False
             else:
-                turn = 'Человек'
-print('Сыграем еще раз? (да или нет)')
+                if isBoardFull(theBoard):
+                    drawBoard(theBoard)
+                    print('Ничья!')
+                    break
+                else:
+                    turn = 'Человек'
+# print('Сыграем еще раз? (да или нет)')
 # if not input().lower().startswith('д'):
-    # break
+#     break
+exit()
+import random
+def check_x(pole):
+    if pole[0][0] == 'X' and pole[1][1] == 'X' and pole[2][2] == 'X':
+        print('x wins')
+        return True
+    elif pole[2][0] == 'X' and pole[1][1] == 'X' and pole[0][2] == 'X':
+        print('x wins')
+        return True
+    elif pole[0][0] == 'X' and pole[0][1] == 'X' and pole[0][2] == 'X':
+        print('x wins')
+        return True
+    elif pole[2][0] == 'X' and pole[1][0] == 'X' and pole[2][0] == 'X':
+        print('x wins')
+        return True
+    elif pole[2][0] == 'X' and pole[2][1] == 'X' and pole[2][2] == 'X':
+        print('x wins')
+        return True
+    elif pole[0][2] == 'X' and pole[1][2] == 'X' and pole[2][2] == 'X':
+        print('x wins')
+        return True
+    else:
+        return False
+def check_o(pole):
+    if pole[0][0] == 'O' and pole[1][1] == 'O' and pole[2][2] == 'O':
+        print('o wins')
+        return True
+    elif pole[2][0] == 'O' and pole[1][1] == 'O' and pole[0][2] == 'O':
+        print('o wins')
+        return True
+    elif pole[0][0] == 'O' and pole[0][1] == 'O' and pole[0][2] == 'O':
+        print('o winss')
+        return True
+    elif pole[2][0] == 'O' and pole[1][0] == 'O' and pole[2][0] == 'O':
+        print('o wins')
+        return True
+    elif pole[2][0] == 'O' and pole[2][1] == 'O' and pole[2][2] == 'O':
+        print('o winss')
+        return True
+    elif pole[0][2] == 'O' and pole[1][2] == 'O' and pole[2][2] == 'O':
+        print('o wins')
+        return True
+    else:
+        return False
+pole = [['_','_','_',],
+        ['_','_','_',],
+        ['_','_','_',]]
+for i in pole:
+    print (i)
+
+while not check_x(pole) and not check_o(pole):
+    a, b = int(input(), int(input()))
+    pole[a][b]= 'X'
+    for i in pole:
+        print(i)
+    print('Ход компьютера')
+    while True:
+        c,d = random.randint(0,2), random.randint(0,2)
+        if pole[c][d] == '_':
+            break
+    pole[c][d] = 'O'
+    for i in pole:
+        print(i)
