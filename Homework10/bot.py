@@ -2,7 +2,7 @@
 
 import os
 import logging
-from config import *
+from config import * # файл с токеном удалила
 from aiogram import *
 from pytube import YouTube
 
